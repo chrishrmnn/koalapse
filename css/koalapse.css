@@ -2,10 +2,6 @@
     #KOALAPSE
     THIS IS THE ONLY CSS REQUIRED :)
 \*------------------------------------*/
-
-.koalapse__title + [aria-hidden="true"] {
+.koalapse__content[aria-hidden="true"] {
     display: none;
-}
-.koalapse__title + [aria-hidden="false"] {
-    display: block;
 }
