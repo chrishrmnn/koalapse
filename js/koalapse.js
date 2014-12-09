@@ -11,7 +11,7 @@
 
         // variables used in the plugin
         var defauts = {
-            "contentClass": "koalapse__content",
+            "panelClass": "koalapse__content",
             "closeOthers": true,
             "animated": false
             },
@@ -25,14 +25,14 @@
             var $_this = $(this),
                 id = "koalapse-" + $_this.index(),
                 kHeadingHTML = $_this.html(),
-                kContent = $_this.next('.'+ parameters.contentClass);
+                kPanel = $_this.next('.'+ parameters.panelClass);
 
             // Wrap heading content in a button and add WAI-ARIA attributes
             $_this.html('<button class="koalapse__trigger" aria-expanded="false" aria-controls="'+ id +'">'+ kHeadingHTML +'</button>');
             var trigger = $_this.children('.koalapse__trigger');
 
             // Add WAI-ARIA attributes to the content related to the title
-            kContent.attr({
+            kPanel.attr({
                 'id': id,
                 'aria-hidden': true
             });
@@ -45,18 +45,14 @@
                 // Close others - if options is set to true
                 if( parameters.closeOthers === true ){
                     $('.koalapse__trigger').attr('aria-expanded', false);
-                    $('.'+ parameters.contentClass).attr('aria-hidden', true);
+                    $('.'+ parameters.panelClass).attr('aria-hidden', true);
                 }
 
                 // Show the selected content
                 $(this).attr('aria-expanded', state);
-                kContent.attr('aria-hidden', !state);
+                kPanel.attr('aria-hidden', !state);
             });
 
         });
     };
 })(jQuery);
-
-
-
-$('.koalapse__title').koalapse();
