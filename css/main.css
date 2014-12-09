@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    #GLOBAL
+\*------------------------------------*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #333;
+}
+
+a {
+    color: #2ba6a6;
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+/**
+*
+*/
+.main {
+    max-width: 40em;
+    margin: 0 auto;
+}
+
+
+
+/*------------------------------------*\
+    #KOALAPSE
+\*------------------------------------*/
+
+/**
+* Default styles
+*/
+.koalapse__title {
+    margin-bottom: 0;
+    position: relative;
+}
+.koalapse__title button:after {
+    content: "+";
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 1;
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+}
+.koalapse__title button[aria-expanded="true"]:after {
+    content:'-';
+}
+.koalapse__title:first-child button {
+    border-top: 0;
+}
+.koalapse__title button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    color: #fff;
+    border: 0;
+    border-top: 1px solid #2ba6a6;
+    background-color: #32C2C1;
+    padding: 1em;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+.koalapse__title button:hover,
+.koalapse__title button:focus {
+    background-color: #2ba6a6;
+}
+.koalapse__content {
+    background-color: #eee;
+    padding: 0.25em 1em;
+}
+.koalapse__content + .koalapse__title {
+    margin-top: 0;
+}
